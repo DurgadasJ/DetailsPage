@@ -1,10 +1,37 @@
+<input [(ngModel)]="fname" type="text" placeholder="Enter your name">
+<div>{{ fname }}</div>
 <div class="name">
-    <h1>Durgadas Joshi Angular Work</h1>
+    <h1>{{ fname }} Angular Work</h1>
 </div>
 <table class="details">
-    <th>Introduction</th>
-    <th>Work Experience</th>
-    <th>Skills</th>
-    <th>Certification</th>
-</table>
+    <thead>
+      <tr>
+        <th (click)="activeTab = 'intro'" >Introduction</th>
+        <th *ngIf="experience == 5" (click)="activeTab = 'experience'">Work Experience</th>
+        <th (click)="activeTab = 'skills'">Skills</th>
+        <th (click)="activeTab = 'certification'">Certification</th>
+      </tr>
+    </thead>
+  </table>
+  <div *ngIf="activeTab === 'intro'">
+      With total industrial experience of 3.8 years. I specialize in Java REST API, Python Scripting and DB2 SQL 
+      Database and with sound knowlege of Angular
+  </div>
+  <div *ngIf="activeTab === 'experience'">
+      Work Experience details
+  </div>
+  <div *ngIf="activeTab === 'skills'">
+    <ul>
+      <li>Java</li>
+      <li>Python</li>
+      <li>DB2</li>
+    </ul>
+  </div>
+  <div *ngIf="activeTab === 'certification'">
+    <ul>
+      <li>Java FullStack Developer2</li>
+    </ul>
+  </div>
+
+
 <router-outlet></router-outlet>
