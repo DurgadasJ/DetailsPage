@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './introduction.component.css'
 })
 export class IntroductionComponent {
-  fname: string = "Durgadas"; 
+  fname: string = ""; 
   name: String = "Durgadas Joshi";
   experience: number = 5; 
   isDisabled: boolean = false;
